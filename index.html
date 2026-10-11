@@ -1,14 +1,124 @@
 <!doctype html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="도민의 목소리를 정책으로 연결하는 진성범 충남도의원 공식 홈페이지입니다.">
-  <title>진성범 충남도의원</title>
-  <link rel="stylesheet" href="./style.css">
+  <meta name="theme-color" content="#102b42">
+  <meta name="description" content="진성범 충남도의원의 의정활동과 정책, 지역 소식과 도민 소통을 전하는 공식 사이트입니다.">
+  <title>진성범 | 진심 하나로</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--navy:#102b42;--navy2:#183d58;--ink:#172c3b;--muted:#63727d;--paper:#f6f5f0;--white:#fff;--line:#d9e0e2;--teal:#167c79;--lime:#d8ed77;--coral:#ef7659;--max:1180px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:92px}body{margin:0;color:var(--ink);background:var(--paper);font-family:"Noto Sans KR",sans-serif;line-height:1.65}a{color:inherit;text-decoration:none}button{font:inherit} .wrap{width:min(var(--max),calc(100% - 48px));margin:auto}.eyebrow{font:700 12px/1.4 "DM Sans",sans-serif;letter-spacing:.15em;text-transform:uppercase;color:var(--teal)}
+    .topline{height:7px;background:linear-gradient(90deg,var(--lime) 0 27%,var(--teal) 27% 72%,var(--coral) 72%)}header{position:sticky;top:0;z-index:10;background:rgba(246,245,240,.94);backdrop-filter:blur(12px);border-bottom:1px solid rgba(16,43,66,.1)}.nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{display:flex;align-items:center;gap:12px;color:var(--navy)}.brand-mark{width:34px;height:34px;border-radius:50%;background:var(--navy);display:grid;place-items:center;color:var(--lime);font-weight:800;font-size:14px;letter-spacing:-.07em}.brand-name{font-size:17px;font-weight:800;letter-spacing:-.04em}.brand-name small{display:block;font-size:9px;font-weight:600;letter-spacing:.17em;color:var(--teal);line-height:1.3}.navlinks{display:flex;align-items:center;gap:24px;font-size:13px;font-weight:600;color:#384c59}.navlinks a:hover{color:var(--teal)}.nav-cta{background:var(--navy);color:#fff!important;padding:11px 17px;border-radius:2px}.menu-toggle{display:none;background:none;border:0;color:var(--navy);font-size:24px}
+    .hero{background:var(--navy);color:white;overflow:hidden;position:relative}.hero:after{content:"";position:absolute;width:560px;height:560px;border:1px solid rgba(216,237,119,.18);border-radius:50%;right:-120px;top:-180px;box-shadow:0 0 0 56px rgba(216,237,119,.035),0 0 0 118px rgba(216,237,119,.025)}.hero-inner{min-height:575px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:50px;position:relative;z-index:1;padding-top:36px;padding-bottom:60px}.hero .eyebrow{color:var(--lime)}.hero h1{font-size:clamp(48px,6.3vw,82px);line-height:1.13;letter-spacing:-.07em;margin:22px 0 24px;font-weight:800}.hero h1 em{font-style:normal;color:var(--lime)}.hero p{max-width:500px;color:#d2dee5;font-size:16px;line-height:1.9;margin:0}.hero-actions{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}.button{display:inline-flex;align-items:center;gap:10px;padding:14px 19px;font-size:13px;font-weight:700;transition:.2s}.button.primary{background:var(--lime);color:var(--navy)}.button.ghost{border:1px solid rgba(255,255,255,.32);color:white}.button:hover{transform:translateY(-2px)}.hero-art{min-height:390px;display:flex;align-items:center;justify-content:center;position:relative}.orbit{width:min(390px,90%);aspect-ratio:1;border:1px solid rgba(216,237,119,.5);border-radius:50%;position:relative;display:grid;place-items:center}.orbit:before,.orbit:after{content:"";position:absolute;border:1px solid rgba(255,255,255,.16);border-radius:50%}.orbit:before{inset:12%}.orbit:after{inset:25%}.orbit-center{width:43%;aspect-ratio:1;border-radius:50%;background:var(--lime);color:var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;transform:rotate(-8deg);box-shadow:0 20px 80px #071b2a}.orbit-center strong{font-size:38px;letter-spacing:-.08em}.orbit-center span{font-size:10px;letter-spacing:.15em;font-weight:700}.orbit-word{position:absolute;padding:8px 13px;background:var(--navy);border:1px solid rgba(255,255,255,.25);font-size:12px;font-weight:700}.ow1{top:8%;left:43%}.ow2{right:-5%;top:53%}.ow3{bottom:9%;left:15%}.hero-caption{position:absolute;bottom:5px;right:0;color:#a9bac5;font:500 10px "DM Sans",sans-serif;letter-spacing:.14em}
+    .ticker{background:var(--lime);color:var(--navy);font-weight:700;font-size:12px;letter-spacing:.08em}.ticker .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 0}.ticker b{font:700 11px "DM Sans",sans-serif;letter-spacing:.15em}.ticker span{font-weight:500}
+    section{padding:100px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:28px;margin-bottom:40px}.section-head h2{font-size:clamp(30px,4vw,48px);letter-spacing:-.065em;line-height:1.2;margin:10px 0 0;color:var(--navy)}.section-head p{max-width:420px;color:var(--muted);font-size:14px;margin:0}.intro-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:64px;align-items:center}.intro-mark{background:var(--teal);min-height:340px;padding:44px;color:white;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}.intro-mark:after{content:"J";position:absolute;right:-4px;bottom:-118px;font:700 380px/.9 "DM Sans",sans-serif;color:rgba(255,255,255,.1)}.intro-mark .eyebrow{color:var(--lime)}.intro-mark blockquote{position:relative;z-index:1;font-size:29px;font-weight:700;letter-spacing:-.06em;line-height:1.55;margin:0}.intro-mark small{font:600 11px "DM Sans",sans-serif;letter-spacing:.16em}.intro-copy h3{font-size:23px;line-height:1.5;letter-spacing:-.045em;margin:0 0 18px;color:var(--navy)}.intro-copy p{font-size:14px;color:var(--muted);margin:0 0 14px}.link-arrow{display:inline-flex;align-items:center;gap:15px;border-bottom:1px solid var(--navy);padding:9px 0;font-size:12px;font-weight:700;color:var(--navy);margin-top:14px}.link-arrow span{font-size:18px}
+    .method{background:#e8efec}.method-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:#cfdad5;border:1px solid #cfdad5}.method-card{background:#e8efec;padding:28px 24px;min-height:210px}.method-card .num{font:700 12px "DM Sans",sans-serif;color:var(--teal);letter-spacing:.12em}.method-card h3{font-size:21px;letter-spacing:-.05em;margin:28px 0 10px;color:var(--navy)}.method-card p{font-size:13px;color:#62726f;margin:0}.method-card:nth-child(2){background:var(--navy);color:white}.method-card:nth-child(2) h3{color:white}.method-card:nth-child(2) p,.method-card:nth-child(2) .num{color:#c2d2db}
+    .activity-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:22px}.activity-feature{background:var(--navy);color:white;min-height:320px;padding:36px;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}.activity-feature:after{content:"";position:absolute;right:-70px;bottom:-140px;width:300px;height:300px;border:1px solid rgba(216,237,119,.45);border-radius:50%;box-shadow:0 0 0 35px rgba(216,237,119,.06),0 0 0 70px rgba(216,237,119,.04)}.activity-feature .eyebrow{color:var(--lime)}.activity-feature h3{position:relative;z-index:1;font-size:34px;max-width:470px;letter-spacing:-.06em;line-height:1.35;margin:16px 0}.activity-feature p{position:relative;z-index:1;max-width:480px;color:#c8d5dd;font-size:13px}.activity-list{display:grid;gap:12px}.activity-item{border:1px solid var(--line);background:#fff;padding:22px 24px;display:flex;justify-content:space-between;align-items:center;gap:20px}.activity-item b{display:block;font-size:16px;color:var(--navy);letter-spacing:-.04em}.activity-item small{font-size:11px;color:var(--muted)}.activity-item span{color:var(--teal);font-size:20px}
+    .policy{background:#fff}.policy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.policy-card{border:1px solid var(--line);padding:26px;min-height:205px;transition:.2s}.policy-card:hover{border-color:var(--teal);transform:translateY(-3px)}.policy-card small{font:700 10px "DM Sans",sans-serif;letter-spacing:.14em;color:var(--teal)}.policy-card h3{font-size:20px;letter-spacing:-.05em;color:var(--navy);margin:25px 0 8px}.policy-card p{font-size:13px;color:var(--muted);margin:0}.policy-note{font-size:11px;color:#819098;margin-top:20px}
+    .local-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}.local-panel{background:#f0e6d7;padding:34px;min-height:285px;position:relative;overflow:hidden}.local-panel:after{content:"";position:absolute;width:210px;height:210px;border:1px solid #c6b599;border-radius:50%;right:-10px;bottom:-85px;box-shadow:0 0 0 22px rgba(198,181,153,.2),0 0 0 45px rgba(198,181,153,.13)}.local-panel strong{font-size:23px;color:var(--navy);letter-spacing:-.05em}.local-panel p{max-width:290px;font-size:13px;color:#6d685f}.local-tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:28px;position:relative;z-index:1}.local-tags span{background:#fff;padding:8px 11px;font-size:11px;font-weight:700;color:var(--navy)}.local-copy h3{font-size:25px;color:var(--navy);letter-spacing:-.06em;line-height:1.5;margin:0 0 15px}.local-copy p{font-size:14px;color:var(--muted)}.steps{list-style:none;padding:0;margin:22px 0 0;display:grid;gap:12px}.steps li{display:grid;grid-template-columns:28px 1fr;gap:10px;font-size:13px;color:#485b67}.steps b{font:700 11px "DM Sans",sans-serif;color:var(--teal)}
+    .support{background:var(--navy);color:white;padding:80px 0}.support-inner{display:flex;align-items:center;justify-content:space-between;gap:35px}.support .eyebrow{color:var(--lime)}.support h2{font-size:clamp(28px,4vw,44px);letter-spacing:-.06em;line-height:1.3;margin:13px 0}.support p{color:#c8d5dd;max-width:620px;font-size:13px;margin:0}.support .button{white-space:nowrap;background:white;color:var(--navy)}
+    .news{background:#fff}.news-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.news-card{border-top:3px solid var(--teal);padding:19px 18px 25px;background:var(--paper);min-height:160px}.news-card small{font:700 10px "DM Sans",sans-serif;letter-spacing:.14em;color:var(--teal)}.news-card h3{font-size:17px;letter-spacing:-.04em;color:var(--navy);margin:20px 0 9px}.news-card p{font-size:12px;color:var(--muted);margin:0}.institute{background:#e8efec;padding:38px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:25px}.institute h3{font-size:22px;color:var(--navy);margin:6px 0;letter-spacing:-.05em}.institute p{font-size:12px;color:var(--muted);margin:0}.institute a{font-size:12px;font-weight:700;color:var(--teal);border-bottom:1px solid var(--teal);padding:9px 0}
+    footer{background:#0b2032;color:#a9bac5;padding:45px 0 25px}.footer-top{display:flex;justify-content:space-between;gap:30px;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,.16)}.footer-brand{color:white;font-weight:800}.footer-brand span{display:block;color:var(--lime);font-size:10px;letter-spacing:.17em}.footer-links{display:flex;gap:18px;flex-wrap:wrap;font-size:11px}.footer-meta{padding-top:20px;display:flex;justify-content:space-between;gap:20px;font-size:10px;color:#8298a7}.admin-note{border:1px solid rgba(255,255,255,.18);padding:14px 16px;margin-top:22px;font-size:11px;color:#a9bac5}.admin-note b{color:white}
+    @media(max-width:850px){.navlinks{gap:13px;font-size:11px}.hero-inner{grid-template-columns:1fr .75fr;gap:20px}.hero-art{min-height:320px}.intro-grid{gap:35px}.method-grid{grid-template-columns:repeat(2,1fr)}.activity-grid{grid-template-columns:1fr}.local-grid{gap:30px}}
+    @media(max-width:650px){.wrap{width:min(var(--max),calc(100% - 34px))}.nav{height:68px}.menu-toggle{display:block}.navlinks{display:none;position:absolute;top:68px;left:0;right:0;background:var(--paper);padding:15px 22px 22px;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;font-size:14px}.navlinks.open{display:flex}.navlinks a{padding:8px 0}.navlinks .nav-cta{text-align:center;padding:12px}.hero-inner{grid-template-columns:1fr;padding-top:54px;padding-bottom:32px;min-height:auto}.hero h1{font-size:53px}.hero p{font-size:14px}.hero-art{min-height:290px;margin:0 -10px}.orbit{width:270px}.orbit-center strong{font-size:30px}.hero-caption{right:10px}.ticker .wrap{align-items:flex-start;flex-direction:column;gap:3px;padding:11px 0}section{padding:70px 0}.section-head{display:block;margin-bottom:27px}.section-head p{margin-top:14px}.intro-grid,.local-grid{grid-template-columns:1fr}.intro-mark{min-height:280px;padding:30px}.intro-mark blockquote{font-size:25px}.method-grid{grid-template-columns:1fr 1fr}.method-card{padding:20px 16px;min-height:190px}.method-card h3{font-size:18px;margin-top:22px}.policy-grid,.news-grid{grid-template-columns:1fr}.policy-card{min-height:160px}.policy-card h3{margin-top:17px}.activity-feature{min-height:290px;padding:27px}.activity-feature h3{font-size:28px}.activity-item{padding:18px}.support{padding:60px 0}.support-inner{align-items:flex-start;flex-direction:column}.institute{grid-template-columns:1fr;padding:26px}.footer-top,.footer-meta{flex-direction:column}.footer-links{gap:12px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+  </style>
 </head>
 <body>
-  <div id="app"></div>
-  <script type="module" src="./main.js"></script>
+  <div class="topline"></div>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#home" aria-label="진성범 공식 사이트 처음으로"><span class="brand-mark">진</span><span class="brand-name">진성범<small>진심 하나로</small></span></a>
+      <button class="menu-toggle" aria-label="메뉴 열기" aria-expanded="false">☰</button>
+      <nav class="navlinks" aria-label="주요 메뉴">
+        <a href="#about">소개</a><a href="#activity">의정활동</a><a href="#policy">정책 아카이브</a><a href="#local">우리동네</a><a href="#supporters">후원회</a><a href="#news">소식</a><a href="#supporters" class="nav-cta">후원회 알아보기 ↗</a>
+      </nav>
+    </div>
+  </header>
+  <main id="home">
+    <section class="hero" style="padding:0">
+      <div class="wrap hero-inner">
+        <div>
+          <div class="eyebrow">CHUNGNAM PROVINCIAL COUNCILOR</div>
+          <h1>진심으로 듣고,<br><em>정책으로</em><br>답하겠습니다.</h1>
+          <p>현장의 목소리를 의정의 출발점으로 삼고, 더 나은 변화를 도민과 함께 만들어가겠습니다. 진심 하나로, 지역의 오늘과 충남의 내일을 잇습니다.</p>
+          <div class="hero-actions"><a class="button primary" href="#activity">의정활동 보기 <span>↘</span></a><a class="button ghost" href="#local">우리동네 이야기 <span>↗</span></a></div>
+        </div>
+        <div class="hero-art" aria-label="역할, 성장, 관계를 잇는 진심 하나로 그래픽">
+          <div class="orbit"><div class="orbit-center"><strong>진심</strong><span>ONE HEART</span></div><span class="orbit-word ow1">역할</span><span class="orbit-word ow2">관계</span><span class="orbit-word ow3">성장</span></div>
+          <div class="hero-caption">LISTEN · CONNECT · GROW</div>
+        </div>
+      </div>
+    </section>
+    <div class="ticker"><div class="wrap"><b>진심 하나로</b><span>도민의 목소리에서 시작해, 확인 가능한 변화로 이어가겠습니다.</span></div></div>
+    <section id="about">
+      <div class="wrap">
+        <div class="section-head"><div><div class="eyebrow">ABOUT SEONGBEOM JIN</div><h2>역할을 다하고,<br>함께 성장합니다.</h2></div><p>의원으로서 맡은 역할을 충실히 수행하고, 도민과의 관계 속에서 배우며, 지역의 성장으로 답하는 의정활동을 지향합니다.</p></div>
+        <div class="intro-grid">
+          <div class="intro-mark"><div class="eyebrow">MY PROMISE</div><blockquote>“가까이 듣고<br>꼼꼼히 살피며<br>끝까지 확인하겠습니다.”</blockquote><small>SEONGBEOM JIN · CHUNGNAM</small></div>
+          <div class="intro-copy"><h3>충남도의원 진성범입니다.</h3><p class="eyebrow" style="margin:0 0 16px">기획경제위원회 · 천안7선거구</p><p>정치는 도민의 삶 가까이에서 시작되어야 한다고 생각합니다. 작은 불편도 놓치지 않고, 필요한 질문을 던지며, 정책이 현장에서 작동하는지 살피겠습니다.</p><p>이 공간에는 의정활동의 과정과 결과, 정책을 고민하는 이유, 지역에서 만난 이야기를 차근차근 기록하겠습니다.</p><a class="link-arrow" href="#method">활동의 기준 보기 <span>↘</span></a></div>
+        </div>
+      </div>
+    </section>
+    <section id="method" class="method">
+      <div class="wrap"><div class="section-head"><div><div class="eyebrow">HOW I WORK</div><h2>듣고, 살피고,<br>답을 찾는 과정</h2></div><p>말에서 끝나지 않도록 문제의 맥락과 진행 상황을 확인하고, 가능한 해법과 후속 점검을 공개하겠습니다.</p></div>
+        <div class="method-grid">
+          <article class="method-card"><span class="num">01 / LISTEN</span><h3>현장을 듣습니다</h3><p>주민의 경험과 지역의 목소리를 의정활동의 출발점으로 삼습니다.</p></article>
+          <article class="method-card"><span class="num">02 / EXAMINE</span><h3>근거를 살핍니다</h3><p>자료와 제도를 확인하고, 문제의 원인과 책임을 구체적으로 짚습니다.</p></article>
+          <article class="method-card"><span class="num">03 / PROPOSE</span><h3>대안을 제안합니다</h3><p>질문·조례·예산 심의 등 의회의 역할로 실현 가능한 해법을 찾습니다.</p></article>
+          <article class="method-card"><span class="num">04 / FOLLOW UP</span><h3>변화를 확인합니다</h3><p>답변과 후속 조치를 살피고, 진행 과정을 도민과 나눕니다.</p></article>
+        </div>
+      </div>
+    </section>
+    <section id="activity">
+      <div class="wrap"><div class="section-head"><div><div class="eyebrow">COUNCIL WORK</div><h2>의정활동</h2></div><p>질문과 발언, 조례와 예산 심의가 어떤 문제에서 출발했고 무엇으로 이어지는지 기록합니다.</p></div>
+        <div class="activity-grid">
+          <article class="activity-feature"><div class="eyebrow">FROM VOICE TO ACTION</div><div><h3>의정의 모든 과정을<br>도민의 언어로 전하겠습니다.</h3><p>도정질문 · 5분 자유발언 · 행정사무감사 · 조례와 예산. 활동 내용은 사실과 진행 상황을 확인해 순차적으로 공개합니다.</p></div><a class="button primary" href="#news">최근 소식 확인 <span>↗</span></a></article>
+          <div class="activity-list">
+            <a class="activity-item" href="#news"><div><b>도정질문</b><small>질문과 답변, 후속 조치</small></div><span>↗</span></a>
+            <a class="activity-item" href="#news"><div><b>5분 자유발언</b><small>현안 제기와 정책 제안</small></div><span>↗</span></a>
+            <a class="activity-item" href="#news"><div><b>행정사무감사</b><small>점검 내용과 개선 확인</small></div><span>↗</span></a>
+            <a class="activity-item" href="#news"><div><b>조례·예산</b><small>제도와 재정의 변화</small></div><span>↗</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="policy" class="policy">
+      <div class="wrap"><div class="section-head"><div><div class="eyebrow">POLICY ARCHIVE</div><h2>정책을 쌓아갑니다.</h2></div><p>관심 의제를 자료, 현장 의견, 제안과 후속 점검으로 연결해 누구나 살펴볼 수 있는 기록으로 만들겠습니다.</p></div>
+        <div class="policy-grid">
+          <article class="policy-card"><small>01 · FUTURE</small><h3>AI와 미래산업</h3><p>지역의 인재와 산업이 함께 성장할 기반을 고민합니다.</p></article>
+          <article class="policy-card"><small>02 · ENERGY</small><h3>에너지 전환</h3><p>전환의 기회와 부담을 지역에서 함께 살핍니다.</p></article>
+          <article class="policy-card"><small>03 · ECONOMY</small><h3>민생경제와 금융</h3><p>생활경제의 안정과 지역 안의 선순환을 모색합니다.</p></article>
+          <article class="policy-card"><small>04 · WORK</small><h3>일자리와 노동</h3><p>좋은 일자리와 안전한 일터를 위한 정책을 살핍니다.</p></article>
+          <article class="policy-card"><small>05 · BALANCE</small><h3>균형발전</h3><p>지역마다 필요한 성장의 조건을 현장에서 찾습니다.</p></article>
+          <article class="policy-card"><small>06 · COMMUNITY</small><h3>생활과 공동체</h3><p>주민의 일상과 맞닿은 과제를 놓치지 않겠습니다.</p></article>
+        </div><p class="policy-note">※ 의제는 향후 현장 의견과 의정활동에 따라 구체화되며, 이 목록은 정책 방향을 소개합니다.</p>
+      </div>
+    </section>
+    <section id="local">
+      <div class="wrap"><div class="section-head"><div><div class="eyebrow">LOCAL CONNECTION</div><h2>우리동네에서<br>답을 찾습니다.</h2></div><p>충남의 변화는 각 동네의 목소리를 듣는 데서 시작됩니다. 현장에서 만난 문제를 의정활동과 연결하겠습니다.</p></div>
+        <div class="local-grid"><div class="local-panel"><strong>천안과 충남의 오늘</strong><p>생활 속 불편과 지역의 가능성을 함께 살피고, 필요한 변화가 무엇인지 차근차근 확인합니다.</p><div class="local-tags"><span>생활환경</span><span>교통·안전</span><span>교육·돌봄</span><span>지역경제</span></div></div><div class="local-copy"><h3>제안은 듣는 데서 끝나지 않도록<br>과정을 공유하겠습니다.</h3><p>주민의 의견이 어떤 절차를 거쳐 검토되고 있는지, 가능한 범위에서 진행 과정을 알려드리겠습니다.</p><ol class="steps"><li><b>01</b><span>현장 의견과 문제를 확인합니다.</span></li><li><b>02</b><span>관련 제도와 담당 기관을 살핍니다.</span></li><li><b>03</b><span>의회가 할 수 있는 대응을 찾습니다.</span></li><li><b>04</b><span>답변과 후속 상황을 기록합니다.</span></li></ol></div></div>
+      </div>
+    </section>
+    <section id="supporters" class="support">
+      <div class="wrap support-inner"><div><div class="eyebrow">OFFICIAL SUPPORTERS ASSOCIATION</div><h2>진성범후원회</h2><p>진성범후원회는 공식 설립 신고를 마친 후원회입니다. 후원회 운영 소식과 정기 모임, 후원금 관련 안내는 확인된 공식 정보에 따라 이곳에 투명하게 게시하겠습니다.</p></div><a class="button" href="#news">후원회 소식 확인 <span>↗</span></a></div>
+    </section>
+    <section id="news" class="news">
+      <div class="wrap"><div class="section-head"><div><div class="eyebrow">LATEST & UPDATES</div><h2>소식과 기록</h2></div><p>의정활동과 후원회 소식을 확인 가능한 내용으로 업데이트합니다.</p></div>
+        <div class="news-grid"><article class="news-card"><small>COUNCIL</small><h3>의정활동 기록을 준비하고 있습니다</h3><p>도민과 공유할 질문·발언·점검 내용을 순차적으로 정리합니다.</p></article><article class="news-card"><small>COMMUNITY</small><h3>현장의 목소리를 정책과 연결합니다</h3><p>지역에서 듣고 확인한 과제를 의정활동의 과정으로 기록합니다.</p></article><article class="news-card"><small>SUPPORTERS</small><h3>후원회 운영 소식을 전하겠습니다</h3><p>공식 안내와 활동 소식을 확인한 뒤 게시합니다.</p></article></div>
+        <div class="institute" style="margin-top:22px"><div><div class="eyebrow">RESEARCH & IDEAS</div><h3>AI경제연구소</h3><p>정책 아카이브 안에서 연구와 정책 제안을 이어갑니다. 운영 현황과 연구 결과를 정리해 공유하겠습니다.</p></div><a href="#policy">정책 아카이브 보기 ↗</a></div>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="wrap"><div class="footer-top"><div class="footer-brand">진성범<span>진심 하나로</span></div><nav class="footer-links" aria-label="하단 메뉴"><a href="#about">소개</a><a href="#activity">의정활동</a><a href="#policy">정책 아카이브</a><a href="#local">우리동네</a><a href="#supporters">후원회</a></nav></div><div class="admin-note"><b>사이트 운영 안내</b> · 이 사이트의 게시물과 메뉴는 운영자가 공식 채널에서 확인한 뒤 업데이트합니다. 관리자 도구는 사이트 소유자 계정으로 운영합니다.</div><div class="footer-meta"><span>진성범 충남도의원 공식 사이트 · 진심 하나로</span><span>정확한 정보와 개인정보 보호를 우선합니다.</span></div></div>
+  </footer>
+  <script>
+    const menuButton=document.querySelector('.menu-toggle');const menu=document.querySelector('.navlinks');menuButton.addEventListener('click',()=>{const open=menu.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open));menuButton.setAttribute('aria-label',open?'메뉴 닫기':'메뉴 열기')});menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');menuButton.setAttribute('aria-expanded','false')}));
+  </script>
 </body>
 </html>
