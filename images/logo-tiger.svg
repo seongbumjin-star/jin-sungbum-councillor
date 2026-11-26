@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <circle cx="100" cy="100" r="96" fill="#102b42"/>
+  <circle cx="100" cy="100" r="88" fill="none" stroke="#d8ed77" stroke-width="5"/>
+  <g transform="translate(-8 4)"><!-- J = 호랑이 꼬리 -->
+  <path d="M116 62 V112 Q116 152 82 152 Q60 152 52 132" fill="none" stroke="#f28c28" stroke-width="32" stroke-linecap="round"/>
+  <!-- 가장자리에서 들어오는 가는 줄무늬 -->
+  <g fill="#102b42">
+    <path d="M134 70 Q122 74 112 80 Q122 82 134 84Z"/>
+    <path d="M98 92 Q108 95 120 100 Q108 104 98 106Z"/>
+    <path d="M134 112 Q124 116 116 122 Q125 124 134 126Z"/>
+    <path d="M88 170 Q91 158 96 146 Q99 158 100 170Z"/>
+    <path d="M40 140 Q50 128 62 122 L66 130 Q54 136 46 148Z"/>
+  </g>
+  <!-- 眞心 박동이 J의 머리 -->
+  <path d="M70 50 h22 l7 -13 l9 26 l7 -13 h37" fill="none" stroke="#d8ed77" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+</g></svg>
