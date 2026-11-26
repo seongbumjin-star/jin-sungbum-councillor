@@ -12,5 +12,5 @@
     <path d="M40 140 Q50 128 62 122 L66 130 Q54 136 46 148Z"/>
   </g>
   <!-- 眞心 박동이 J의 머리 -->
-  <path d="M70 50 h22 l7 -13 l9 26 l7 -13 h37" fill="none" stroke="#d8ed77" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M52 50 H64 Q68 43 72 50 H77 L81 56 L87 28 L93 62 L97 50 H152" fill="none" stroke="#d8ed77" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
 </g></svg>
