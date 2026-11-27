@@ -2,7 +2,7 @@
    - 서버(server.js)가 있고 OPENAI_API_KEY가 설정돼 있으면 AI가 답합니다.
    - 서버가 없거나 키가 비어 있으면 policy.md의 FAQ에서 가장 비슷한 질문을 찾아 답합니다. */
 (() => {
-  const CONTACT = '정확한 안내를 위해 의원실로 문의해 주세요. (전화 041-635-5224 · 이메일 jin2026@kakao.com)';
+  const CONTACT = '정확한 안내를 위해 의원실로 문의해 주세요. (전화 010-5092-5169 · 이메일 jin2026@kakao.com)';
   const API = window.JIN_CHAT_API || '/api/chat';
   const QUICK = ['민원이나 정책 제안은 어떻게 하나요?', '충남형 기본금융은 무엇인가요?', '후원은 어떻게 하나요?'];
   let faq = [];
