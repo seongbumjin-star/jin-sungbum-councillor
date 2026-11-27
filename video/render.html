@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500;700;900&family=Noto+Serif+KR:wght@800&display=block" rel="stylesheet">
+<style>
+:root{--navy:#102b42;--lime:#d8ed77;--teal:#167c79;--orange:#f28c28;--paper:#f6f5f0}
+*{box-sizing:border-box}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:var(--navy);font-family:"Noto Sans KR",sans-serif;color:#fff}
+.sc{position:absolute;inset:0;opacity:0}
+.brand{position:absolute;left:0;right:0;top:120px;display:flex;align-items:center;justify-content:center;gap:18px;font-size:38px;font-weight:700;color:#c8d5dd;z-index:5}
+.brand img{width:64px;height:64px}
+.big{position:absolute;left:70px;right:70px;text-align:center;font-weight:900;letter-spacing:-.04em;line-height:1.22}
+.small{position:absolute;left:110px;right:110px;text-align:center;font-size:42px;line-height:1.55;color:#c8d5dd;font-weight:500}
+.lime{color:var(--lime)}.orange{color:var(--orange)}
+svg{overflow:visible}
+</style></head><body>
+<div class="brand" id="brand"><img src="../images/logo-tiger.svg" alt=""><span>진성범 충남도의원</span></div>
+
+<!-- 1 질문 -->
+<div class="sc" id="s1">
+  <svg style="position:absolute;left:340px;top:470px" width="400" height="460" viewBox="0 0 400 460">
+    <g fill="none" stroke="#d8ed77" stroke-width="14" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M200 40 L370 110 L200 180 L30 110 Z" fill="#d8ed77" fill-opacity=".15"/>
+      <path d="M110 145 V205 Q200 250 290 205 V145"/>
+      <path d="M370 110 V200"/>
+      <circle cx="200" cy="270" r="70"/>
+      <path d="M60 450 Q70 350 200 350 Q330 350 340 450"/>
+    </g>
+  </svg>
+  <div class="big" id="q" style="top:1030px;font-size:104px"></div>
+  <div class="small" style="top:1330px" id="s1s">충남 청년의 고민</div>
+</div>
+
+<!-- 2 닻 -->
+<div class="sc" id="s2">
+  <svg style="position:absolute;left:0;top:380px" width="1080" height="720" viewBox="0 0 1080 720">
+    <rect x="0" y="260" width="1080" height="460" fill="#167c79" opacity=".35"/>
+    <path d="M0 260 Q135 230 270 260 T540 260 T810 260 T1080 260" fill="none" stroke="#5fb3ad" stroke-width="6"/>
+    <path d="M330 250 H750 L700 320 H380 Z" fill="#f6f5f0"/>
+    <rect x="520" y="110" width="10" height="140" fill="#f6f5f0"/>
+    <path d="M530 120 L650 230 H530 Z" fill="#d8ed77"/>
+    <path d="M70 640 Q260 560 540 600 Q820 560 1010 640 V720 H70Z" fill="#0b2033"/>
+    <text x="540" y="690" text-anchor="middle" font-size="44" font-weight="700" fill="#d8ed77" font-family="Noto Sans KR">충남</text>
+    <g id="anchor">
+      <line x1="540" y1="-400" x2="540" y2="0" stroke="#c8d5dd" stroke-width="6" stroke-dasharray="14 10"/>
+      <g fill="none" stroke="#f28c28" stroke-width="16" stroke-linecap="round">
+        <circle cx="540" cy="22" r="20"/>
+        <path d="M540 42 V170"/><path d="M490 80 H590"/>
+        <path d="M455 130 Q470 190 540 190 Q610 190 625 130"/>
+      </g>
+    </g>
+  </svg>
+  <div class="big" style="top:1150px;font-size:110px">청년을 붙잡는 <span class="orange">닻</span></div>
+  <div class="small" style="top:1330px">앵커사업: 대학과 지역을 이어<br>청년이 충남에 취업·정착하도록<br>돕는 사업</div>
+</div>
+
+<!-- 3 국비 -->
+<div class="sc" id="s3">
+  <div class="small" style="top:330px;color:#fff;font-weight:700">앵커사업 국비 기본지원액</div>
+  <svg style="position:absolute;left:190px;top:450px" width="700" height="640" viewBox="0 0 700 640">
+    <line x1="0" y1="600" x2="700" y2="600" stroke="#5c7385" stroke-width="4"/>
+    <rect id="b1" x="70" y="600" width="220" height="0" rx="10" fill="#5fb3ad"/>
+    <rect id="b2" x="410" y="600" width="220" height="0" rx="10" fill="#d8ed77"/>
+    <text id="v1" x="180" y="560" text-anchor="middle" font-size="64" font-weight="900" fill="#fff" font-family="Noto Sans KR"></text>
+    <text id="v2" x="520" y="560" text-anchor="middle" font-size="64" font-weight="900" fill="#d8ed77" font-family="Noto Sans KR"></text>
+    <text x="180" y="650" text-anchor="middle" font-size="42" fill="#c8d5dd" font-family="Noto Sans KR">2026년</text>
+    <text x="520" y="650" text-anchor="middle" font-size="42" fill="#c8d5dd" font-family="Noto Sans KR">2027년</text>
+  </svg>
+  <div class="big" style="top:1190px;font-size:104px">국비 699억 <span class="lime">→</span> <span id="cnt" class="lime">699</span><span class="lime">억</span></div>
+  <div class="small" style="top:1360px">2026년 → 2027년</div>
+</div>
+
+<!-- 4 34% -->
+<div class="sc" id="s4">
+  <div style="position:absolute;left:90px;right:90px;top:280px;height:620px;border-radius:28px;overflow:hidden;border:6px solid #d8ed77">
+    <img src="../images/2026-11-24-dojeong-1.jpg" style="width:100%;height:100%;object-fit:cover;object-position:center 25%">
+  </div>
+  <div class="big" id="pct" style="top:930px;font-size:230px;color:var(--orange)">34%</div>
+  <div class="big" style="top:1200px;font-size:100px">줄었습니다</div>
+  <div class="small" style="top:1360px">11월 24일 도정질문에서<br>감소 원인 확인과<br>추가 재원을 요구했습니다</div>
+</div>
+
+<!-- 5 추적 -->
+<div class="sc" id="s5">
+  <div class="big" style="top:300px;font-size:104px">취업·정착까지 <span class="lime">추적</span></div>
+  <div id="items" style="position:absolute;left:150px;right:150px;top:560px;display:flex;flex-direction:column;gap:46px"></div>
+  <div class="small" style="top:1330px">졸업생의 도내 취업·유지·정착으로<br>성과를 평가하자고 제안했습니다</div>
+</div>
+
+<!-- 6 마무리 -->
+<div class="sc" id="s6">
+  <img id="logo" src="../images/logo-tiger.svg" style="position:absolute;left:390px;top:330px;width:300px;height:300px">
+  <div class="big" style="top:700px;font-size:120px"><span class="lime">청년이 남는</span><br>충남</div>
+  <div class="small" style="top:1010px;color:#fff;font-size:46px;font-weight:700">청년이 충남에 남는 것,<br>숫자로 확인하겠습니다.</div>
+  <div class="small" style="top:1210px;font-size:40px">진성범 충남도의원 · 기획경제위원회</div>
+  <div style="position:absolute;left:150px;right:150px;top:1300px;padding:26px 0;border-radius:20px;background:#d8ed77;color:#102b42;text-align:center;font-size:50px;font-weight:900">☎ 041-635-5224<br><span style="font-size:42px">jinsim1.kr</span></div>
+</div>
+
+<script>
+const S=[[0,3],[3,8],[8,14],[14,19],[19,25],[25,30]],X=.4;
+const cl=(v,a=0,b=1)=>Math.max(a,Math.min(b,v)), ease=x=>1-Math.pow(1-cl(x),3);
+const Q='졸업하면\n충남 떠나나요?';
+const items=[['도내 취업률','🎓'],['취업 유지율','💼'],['지역 정착','🏠']];
+document.getElementById('items').innerHTML=items.map((it,i)=>`<div id="it${i}" style="display:flex;align-items:center;gap:36px;padding:34px 40px;border-radius:24px;background:#18384f;font-size:62px;font-weight:700"><span id="ck${i}" style="flex:none;width:96px;height:96px;border-radius:50%;border:6px solid #5c7385;display:grid;place-items:center;font-size:60px;color:#102b42">✓</span>${it[0]}</div>`).join('');
+window.render=t=>{
+  S.forEach(([a,b],i)=>{
+    const el=document.getElementById('s'+(i+1));
+    let o=1; if(i>0) o=cl((t-a)/X); if(i<S.length-1) o=Math.min(o,cl((b-t)/X)); if(t<a-.001||t>b+X) o=0;
+    el.style.opacity=o; el.style.transform=`translateY(${(1-o)*30}px)`;
+  });
+  document.getElementById('brand').style.opacity=t<25?1:cl((25.4-t)/X);
+  // 1
+  const n=Math.floor(cl((t-.2)/1.6)*Q.length); document.getElementById('q').innerHTML=Q.slice(0,n).replace('\n','<br>')+(t<2.2&&Math.floor(t*4)%2?'|':'');
+  // 2
+  const ay=-260+ease((t-3.3)/1.6)*560; document.getElementById('anchor').setAttribute('transform',`translate(0 ${ay})`);
+  // 3
+  const p=ease((t-8.4)/1.4), h1=480*p, h2=480*461/699*ease((t-9.6)/1.4);
+  b1.setAttribute('y',600-h1);b1.setAttribute('height',h1);b2.setAttribute('y',600-h2);b2.setAttribute('height',h2);
+  v1.textContent=p>.98?'699억':'';v1.setAttribute('y',600-h1-24);v2.textContent=ease((t-9.6)/1.4)>.98?'461억':'';v2.setAttribute('y',600-h2-24);
+  document.getElementById('cnt').textContent=Math.round(699-(699-461)*ease((t-9.8)/2.2));
+  // 4
+  const k=ease((t-14.6)/.8); document.getElementById('pct').style.transform=`scale(${.6+.4*k})`; document.getElementById('pct').style.opacity=k;
+  // 5
+  items.forEach((_,i)=>{const on=t>=20.2+i*1.4;const c=document.getElementById('ck'+i);c.style.background=on?'#d8ed77':'transparent';c.style.borderColor=on?'#d8ed77':'#5c7385';c.style.color=on?'#102b42':'transparent';document.getElementById('it'+i).style.opacity=on?1:.45;});
+  // 6
+  const lk=ease((t-25.3)/.9); const beat=t>27&&t<27.6?1+.08*Math.sin((t-27)/.6*Math.PI):1;
+  document.getElementById('logo').style.transform=`scale(${(.7+.3*lk)*beat})`; document.getElementById('logo').style.opacity=lk;
+};
+render(0);
+</script></body></html>
