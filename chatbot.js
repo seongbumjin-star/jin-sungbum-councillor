@@ -4,7 +4,18 @@
 (() => {
   const CONTACT = '정확한 안내를 위해 의원실로 문의해 주세요. (전화 010-5092-5169 · 이메일 jin2026@kakao.com)';
   const API = window.JIN_CHAT_API || '/api/chat';
-  const QUICK = ['민원이나 정책 제안은 어떻게 하나요?', '충남형 기본금융은 무엇인가요?', '후원은 어떻게 하나요?'];
+  // 추천 질문 버튼: [버튼 글자, policy.md의 질문 제목(정확히 같아야 함)]
+  const QUICK = [
+    ['민원 접수 방법', '민원이나 정책 제안은 어떻게 하나요?'],
+    ['기본금융이란?', '충남형 기본금융은 무엇인가요?'],
+    ['앵커사업', '앵커사업은 무엇이고 의원은 무엇을 요구했나요?'],
+    ['연락처', '의원실 연락처가 어떻게 되나요?'],
+    ['지역구', '진성범 의원의 지역구는 어디인가요?'],
+    ['후원 방법', '후원은 어떻게 하나요?'],
+    ['의정 자료·영상', '의정활동 자료나 영상은 어디서 보나요?'],
+  ];
+  // 방문 통계(구글 애널리틱스): 질문 문장은 절대 보내지 않고, 횟수와 FAQ 제목만 기록
+  const track = (name, params) => { try { if (typeof gtag === 'function') gtag('event', name, params || {}); } catch (e) {} };
   let faq = [];
   let useApi = true;
 
@@ -21,8 +32,9 @@
 .jc-msg{max-width:85%;padding:10px 12px;border-radius:12px;font-size:15px;line-height:1.6;white-space:pre-wrap;word-break:keep-all;overflow-wrap:anywhere}
 .jc-bot{background:#fff;border:1px solid #d9e0e2;color:#102b42;align-self:flex-start}
 .jc-me{background:#167c79;color:#fff;align-self:flex-end}
-.jc-quick{display:flex;flex-direction:column;gap:6px;align-self:flex-start;max-width:90%}
-.jc-quick button{text-align:left;font:inherit;font-size:14px;padding:8px 12px;border:1px solid #167c79;background:#fff;color:#167c79;border-radius:999px;cursor:pointer}
+.jc-quick{display:flex;flex-wrap:wrap;gap:6px;align-self:flex-start;max-width:100%}
+.jc-quick-label{font-size:13px;color:#4c616d;align-self:flex-start;margin-top:2px}
+.jc-quick button{text-align:left;font:inherit;font-size:14px;font-weight:700;padding:8px 13px;border:1px solid #167c79;background:#fff;color:#167c79;border-radius:999px;cursor:pointer}
 .jc-quick button:hover{background:#e8efec}
 .jc-form{display:flex;gap:6px;padding:10px;border-top:1px solid #d9e0e2;background:#fff}
 .jc-form input{flex:1;min-width:0;font:inherit;font-size:15px;padding:10px;border:1px solid #b9c8cf;border-radius:8px}
@@ -70,28 +82,37 @@
     return d;
   }
 
+  function showQuick(label) {
+    const l = document.createElement('div');
+    l.className = 'jc-quick-label';
+    l.textContent = label;
+    log.appendChild(l);
+    const q = document.createElement('div');
+    q.className = 'jc-quick';
+    QUICK.forEach(([t, full]) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.textContent = t;
+      b.addEventListener('click', () => { track('chatbot_quick', { button: t }); ask(full, t); });
+      q.appendChild(b);
+    });
+    log.appendChild(q);
+    log.scrollTop = log.scrollHeight;
+  }
+
   let started = false;
   function start() {
     if (started) return;
     started = true;
-    add('안녕하세요! 궁금한 정책을 물어보세요.', 'bot');
-    const q = document.createElement('div');
-    q.className = 'jc-quick';
-    QUICK.forEach(t => {
-      const b = document.createElement('button');
-      b.type = 'button';
-      b.textContent = t;
-      b.addEventListener('click', () => ask(t));
-      q.appendChild(b);
-    });
-    log.appendChild(q);
+    add('안녕하세요! 궁금한 내용을 아래에서 눌러 보거나 직접 물어보세요.', 'bot');
+    showQuick('자주 묻는 질문');
   }
 
   function toggle(open) {
     panel.hidden = !open;
     btn.setAttribute('aria-expanded', String(open));
     btn.setAttribute('aria-label', open ? '정책 안내 챗봇 닫기' : '정책 안내 챗봇 열기');
-    if (open) { start(); input.focus(); }
+    if (open) { track('chatbot_open'); start(); input.focus(); }
   }
   btn.addEventListener('click', () => toggle(panel.hidden));
   panel.querySelector('.jc-close').addEventListener('click', () => { toggle(false); btn.focus(); });
@@ -127,7 +148,7 @@
       const score = sim + hits * 0.35;
       if (score > bestScore) { bestScore = score; best = f; }
     }
-    return bestScore >= 0.35 && best ? best.a : CONTACT;
+    return bestScore >= 0.35 && best ? best : null;
   }
 
   async function apiAnswer(text) {
@@ -146,15 +167,28 @@
     }
   }
 
-  async function ask(text) {
+  async function ask(text, shown) {
     text = String(text || '').trim().slice(0, 300);
     if (!text) return;
-    add(text, 'me');
+    add(shown || text, 'me');
     input.value = '';
     const wait = add('답변을 찾고 있습니다…', 'bot');
     await ready;
-    const ans = (await apiAnswer(text)) || faqAnswer(text);
-    wait.textContent = ans;
+    // 추천 버튼은 해당 FAQ로 바로 답함
+    const exact = shown ? faq.find(f => f.q === text) : null;
+    const api = exact ? null : await apiAnswer(text);
+    const hit = exact || (api ? null : faqAnswer(text));
+    if (api) {
+      wait.textContent = api;
+      track('chatbot_answer', { source: 'ai' });
+    } else if (hit) {
+      wait.textContent = hit.a;
+      track('chatbot_answer', { source: 'faq', faq: hit.q.slice(0, 100) });
+    } else {
+      wait.textContent = CONTACT;
+      track('chatbot_unanswered');
+      showQuick('이런 질문은 바로 답해 드려요');
+    }
     log.scrollTop = log.scrollHeight;
   }
 
