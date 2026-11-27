@@ -10,9 +10,9 @@
     '.jqa svg{width:22px;height:22px;flex:none}' +
     '.jqa-call{height:52px;padding:0 20px 0 16px;border-radius:26px;background:#f28c28;color:#fff}.jqa-call:hover{background:#e07a14}' +
     '.jqa-call small{font-weight:500;font-size:13px;opacity:.9}' +
-    '.jqa-share{width:52px;height:52px;justify-content:center;border-radius:50%;background:#fff;color:#102b42;border:1px solid #d9e0e2!important}.jqa-share:hover{background:#eef3f1}' +
+    '.jqa-share{height:48px;padding:0 18px 0 14px;border-radius:24px;background:#fff;color:#102b42;border:2px solid #102b42!important}.jqa-share:hover{background:#eef3f1}' +
     '.jqa-toast{position:fixed;left:50%;bottom:90px;transform:translateX(-50%);z-index:95;background:#102b42;color:#fff;padding:12px 18px;border-radius:10px;font:500 15px/1.4 "Noto Sans KR",sans-serif;box-shadow:0 8px 24px rgba(0,0,0,.25)}' +
-    '@media(max-width:480px){.jqa{left:14px;bottom:14px}.jqa-call{height:56px}.jqa-call small{display:none}.jqa-share{width:56px;height:56px}}' +
+    '@media(max-width:480px){.jqa{left:14px;bottom:14px}.jqa-call{height:56px}.jqa-call small{display:none}.jqa-share{height:52px}}' +
     '@media print{.jqa{display:none}}';
   document.head.appendChild(css);
 
@@ -39,9 +39,9 @@
   share.type = 'button';
   share.className = 'jqa-share';
   share.setAttribute('aria-label', '이 페이지 공유하기');
-  share.title = '공유하기';
-  share.innerHTML =
-    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><path d="M8.6 13.5l6.8 4M15.4 6.5l-6.8 4"/></svg>';
+    share.innerHTML =
+    '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 15V3"/><path d="M7 8l5-5 5 5"/><path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-7"/></svg>' +
+    '공유하기';
   share.addEventListener('click', function () {
     var data = {title: document.title, text: document.title + ' | 진성범 충남도의원', url: pageUrl()};
     track('click_share');
